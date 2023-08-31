@@ -1,0 +1,111 @@
+:root {
+    --default-green: #009944;
+    --light-green: #00cc99;
+}
+.infosign {
+    background-color: var(--default-green);
+    color: white;
+    position: relative;
+    height: 6.8rem;
+    border: 0.5rem solid #111;
+    &.color-inversion {
+        background-color: white;
+        color: var(--default-green);
+    }
+    &.color-lightgreen {
+        background-color: var(--light-green);
+    }
+}
+.infosign-inner {
+    height: 4.8rem;
+    top: 1rem;
+    left: 1rem;
+    position: relative;
+    display: flex;
+}
+
+.ja-outer {
+    height: 2rem;
+    position: absolute;
+    top: 0rem;
+}
+.ja {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    font-size: 2.15rem;
+    line-height: 1;
+    margin-top: -0.09em;
+}
+.en-outer {
+    height: 1rem;
+    position: absolute;
+    top: 2.4rem;
+}
+.en {
+    font-family: 'REM', sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    line-height: .8;
+    transform-origin: left;
+    transform: scaleX(0.85);
+    margin-top: 0.02rem;
+}
+
+.zhkr-outer {
+    height: 1rem;
+    position: absolute;
+    top: 3.8rem;
+    display: flex;
+}
+.kr {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-size: 1.075rem;
+    line-height: .8;
+    margin-top: 0.02em;
+    margin-left: 0.75rem;
+}
+.zh {
+    font-family: 'Noto Sans SC', sans-serif;
+    font-weight: 500;
+    font-size: 1.075rem;
+    line-height: .8;
+    margin-top: 0.02em;
+}
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.arrow-outer {
+    position: relative;
+    width: 3.4rem;
+    height: 100%;
+    margin-right: 1.3rem;
+}
+
+.arrow {
+    position: absolute;
+    top: 0;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.distance-outer {
+    position: absolute;
+    top: 3.84rem;
+    width: 100%;
+    height: 0.96rem;
+}
+
+.distance {
+    transform: scaleX(0.85);
+    position: absolute;
+    text-align: center;
+    font-family: 'REM', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: .8;
+    width: 100%;
+    margin-top: 0.1rem;
+}

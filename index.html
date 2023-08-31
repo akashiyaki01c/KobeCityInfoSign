@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&family=Noto+Sans+KR:wght@500&family=Noto+Sans+SC:wght@500&family=REM:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="infosign">
+        <div class="infosign-inner">
+            <div class="arrow-outer">
+                <div class="arrow">
+                    <object style="height: 100%; width: 100%; transform: rotate(-90deg);" data="./leftArrow.svg" type="image/svg+xml"></object>
+                </div>
+                <div class="distance-outer">
+                    <div class="distance">50m</div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="ja-outer">
+                    <div id="ja" class="ja">三宮駅</div>
+                </div>
+                <div class="en-outer">
+                    <div id="en" class="en">Sannomiya Station</div>
+                </div>
+                <div class="zhkr-outer">
+                    <div id="zh" class="zh">三宫站</div>
+                    <div id="kr" class="kr">산노미야역</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="inputs">
+        <div>
+            矢印の種類
+            <select name="arrow" id="arrow-input">
+                <option value="upDirect">上向き</option>
+                <option value="leftDirect">右向き</option>
+                <option value="rightDirect">左向き</option>
+                <option value="leftUpDirect">左上向き</option>
+                <option value="rightUpDirect">右上向き</option>
+                <option value="leftDownDirect">左下向き</option>
+                <option value="rightDownDirect">右下向き</option>
+                <option value="rightTurn">右ターン</option>
+                <option value="leftTurn">左ターン</option>
+            </select>
+        </div>
+        <div>
+            日本語
+            <input type="text" value="総合運動公園駅" name="ja" id="ja-input" onchange="document.querySelector('#ja').innerHTML = document.querySelector('#ja-input').value">
+        </div>
+        <div>
+            英語
+            <input type="text" value="Sogoundo-koen Station" name="en" id="en-input" onchange="document.querySelector('#en').innerHTML = document.querySelector('#en-input').value">
+        </div>
+        <div>
+            中国語
+            <input type="text" value="綜合运動公园站" name="zh" id="zh-input" onchange="document.querySelector('#zh').innerHTML = document.querySelector('#zh-input').value">
+        </div>
+        <div>
+            韓国語
+            <input type="text" value="소고운도코언 역" name="kr" id="kr-input" onchange="document.querySelector('#kr').innerHTML = document.querySelector('#kr-input').value">
+        </div>
+        <div>
+            距離
+            <input type="text" value="50m" name="distance" id="distance-input" onchange="document.querySelector('.distance').innerHTML = document.querySelector('#distance-input').value">
+        </div>
+        <div>
+            色反転
+            <input type="checkbox" name="color" id="color-input" onchange="document.querySelector('.infosign').classList.toggle('color-inversion')">
+        </div>
+    </div>
+    <script>
+        const arrows = {
+            // <!-- Created with Inkscape (http://www.inkscape.org/) -->
+            leftDirect: `<object style="height: 100%; width: 100%;" data="./leftArrow.svg" type="image/svg+xml"></object>`,
+            rightDirect: `<object style="height: 100%; width: 100%; transform: scaleX(-1);" data="./leftArrow.svg" type="image/svg+xml"></object>`,
+            upDirect: `<object style="height: 100%; width: 100%; transform: rotate(-90deg);" data="./leftArrow.svg" type="image/svg+xml"></object>`,
+            leftUpDirect: `<object style="height: 100%; width: 100%;" data="./leftUpArrow.svg" type="image/svg+xml"></object>`,
+            rightUpDirect: `<object style="height: 100%; width: 100%; transform: rotate(90deg);" data="./leftUpArrow.svg" type="image/svg+xml"></object>`,
+            rightDownDirect: `<object style="height: 100%; width: 100%; transform: rotate(180deg);" data="./leftUpArrow.svg" type="image/svg+xml"></object>`,
+            leftDownDirect: `<object style="height: 100%; width: 100%; transform: rotate(270deg);" data="./leftUpArrow.svg" type="image/svg+xml"></object>`,
+            rightTurn: `<object style="height: 100%; width: 100%; transform:" data="./turnArrow.svg" type="image/svg+xml"></object>`,
+            leftTurn: `<object style="height: 100%; width: 100%; transform: scaleX(-1);" data="./turnArrow.svg" type="image/svg+xml"></object>`,
+        }
+
+        document.querySelector("#arrow-input").onchange = (elem) => {
+            document.querySelector(".arrow").innerHTML = arrows[elem.srcElement.value];
+        }
+    </script>
+</body>
+</html>
